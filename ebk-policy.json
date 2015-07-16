@@ -1,0 +1,33 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "Stmt1436394548000",
+            "Effect": "Allow",
+            "Action": [
+                "s3:GetObject",
+                "s3:ListBucket",
+                "s3:PutObject",
+                "s3:PutObjectAcl"
+            ],
+            "Resource": [
+                "arn:aws:s3:::YOUR_THUMBNAIL_BUCKET/*",
+                "arn:aws:s3:::YOUR_SOURCE_BUCKET/*"
+            ]
+        },
+        {
+            "Sid": "Stmt1436394629000",
+            "Effect": "Allow",
+            "Action": [
+                "dynamodb:GetItem",
+                "dynamodb:PutItem",
+                "dynamodb:Query",
+                "dynamodb:Scan",
+                "dynamodb:UpdateItem"
+            ],
+            "Resource": [
+                "arn:aws:dynamodb:eu-west-1:YOUR_ACCOUNT_ID:table/YOUR_TABLE_NAME"
+            ]
+        }
+    ]
+}
